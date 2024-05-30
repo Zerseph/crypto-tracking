@@ -1,9 +1,19 @@
 import React from 'react';
+import CryptoChart from './components/CryptoChart';
 
-function App() {
+const App: React.FC = () => {
+  const symbols = ['BTCUSDT', 'ETHUSDT', 'BNBUSDT', 'ADAUSDT', 'XRPUSDT'];
+
   return (
-<h1>Proyecto Crypto-Traking</h1>
+    <div>
+      <h1>Dashbooard - Crypto-Tracking</h1>
+      <div>
+        {symbols.map(symbol => (
+          <CryptoChart key={symbol} symbol={symbol} />
+        ))}
+      </div>
+    </div>
   );
-}
+};
 
 export default App;
