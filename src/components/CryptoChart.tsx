@@ -41,7 +41,7 @@ const CryptoChart: React.FC<CryptoChartProps> = ({ symbol, name }) => {
   };
 
   return (
-    <div className="bg-zinc-100 bg-opacity-91 rounded-lg shadow p-4 shadow-3xl-dark">
+    <div className="bg-zinc-100 bg-opacity-91 rounded-lg shadow p-1 shadow-3xl-dark">
       <h2 className="text-xl font-bold mb-4">
         {symbol}- {name}
       </h2>
