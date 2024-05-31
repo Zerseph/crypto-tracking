@@ -38,18 +38,23 @@ const CryptoChart: React.FC<CryptoChartProps> = ({ symbol }) => {
     },
   };
 
-  if (error) {
-    return <p className="text-red-500">{error}</p>;
-  } else {
-    return (
-      <Chart
-        options={chartOptions}
-        series={[{ name: symbol, data: data.map((d) => [d.time, d.price]) }]}
-        type="line"
-        height="300"
-      />
-    );
-  }
+  return (
+    <div>
+      <h2 className="text-xl font-bold mb-4">
+        {symbol}
+      </h2>
+      {error ? (
+        <p className="text-red-500">{error}</p>
+      ) : (
+        <Chart
+          options={chartOptions}
+          series={[{ name: symbol, data: data.map((d) => [d.time, d.price]) }]}
+          type="line"
+          height="300"
+        />
+      )}
+    </div>
+  );
 };
 
 export default CryptoChart;
