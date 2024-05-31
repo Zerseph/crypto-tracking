@@ -25,8 +25,8 @@ const CryptoChart: React.FC<CryptoChartProps> = ({ symbol }) => {
         }
       }
     };
-    const interval = setInterval(fetchData, 5000); //Aqui actualizo cada 5sg para obtener resultados en tiempo real
-    return () => clearInterval(interval); // Aqui evito que se siga ejecutando cuando el componente se desmonta
+    const interval = setInterval(fetchData, 5000);
+    return () => clearInterval(interval);
   }, [symbol]);
 
   const chartOptions = {
@@ -36,13 +36,12 @@ const CryptoChart: React.FC<CryptoChartProps> = ({ symbol }) => {
     xaxis: {
       type: "datetime" as "datetime",
     },
+    colors: ["#640000"],
   };
 
   return (
-    <div>
-      <h2 className="text-xl font-bold mb-4">
-        {symbol}
-      </h2>
+    <div className="bg-zinc-100 bg-opacity-91 rounded-lg shadow p-4 shadow-3xl-dark">
+      <h2 className="text-xl font-bold mb-4">{symbol}</h2>
       {error ? (
         <p className="text-red-500">{error}</p>
       ) : (
