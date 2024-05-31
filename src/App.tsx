@@ -1,5 +1,6 @@
 import React from "react";
 import CryptoChart from "./components/CryptoChart";
+import Footer from "./components/Footer";
 
 const App: React.FC = () => {
   const symbols = [
@@ -32,6 +33,7 @@ const App: React.FC = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
