@@ -6,7 +6,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <h1>Dashbooard - Crypto-Tracking</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center text-gray">Dashbooard - Crypto-Tracking</h1>
       <div>
         {symbols.map(symbol => (
           <CryptoChart key={symbol} symbol={symbol} />
