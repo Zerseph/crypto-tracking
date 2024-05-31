@@ -4,9 +4,10 @@ import { getMarketData } from "../services/binanceApi";
 
 interface CryptoChartProps {
   symbol: string;
+  name: string;
 }
 
-const CryptoChart: React.FC<CryptoChartProps> = ({ symbol }) => {
+const CryptoChart: React.FC<CryptoChartProps> = ({ symbol, name }) => {
   const [data, setData] = useState<{ time: number; price: number }[]>([]);
   const [error, setError] = useState<string | null>(null);
 
@@ -41,7 +42,9 @@ const CryptoChart: React.FC<CryptoChartProps> = ({ symbol }) => {
 
   return (
     <div className="bg-zinc-100 bg-opacity-91 rounded-lg shadow p-4 shadow-3xl-dark">
-      <h2 className="text-xl font-bold mb-4">{symbol}</h2>
+      <h2 className="text-xl font-bold mb-4">
+        {symbol}- {name}
+      </h2>
       {error ? (
         <p className="text-red-500">{error}</p>
       ) : (
